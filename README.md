@@ -44,13 +44,24 @@ https://stackoverflow.com/questions/31402576/enable-focus-only-on-keyboard-use-o
 
 #### using js + css
         // Adding css class to body element to giving more previlige to browser to know from where the events are triggering
+        // Jquery
         $("body").on('keydown', function (e) {
-            $(this).removeClass("mouse-input").addClass("keyboard-input");
+            $(this).addClass("keyboard-input");
         });
 
         $("body").on('mousedown', function (e) {
-            $(this).removeClass("keyboard-input").addClass("mouse-input");
+            $(this).removeClass("keyboard-input")
         });
+        
+        //or using vanilla Javascript        
+        document.body.addEventListener('keydown', function() {
+          document.body.classList.add('keyboard-input');
+        });
+
+        document.body.addEventListener('mousedown', function() {
+          document.body.classList.remove('keyboard-input');
+        });
+
 
         CSS
         /* visible  */
