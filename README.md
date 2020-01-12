@@ -38,7 +38,27 @@ As mentioned by attribute name we can pass more information of different element
 https://webaim.org/resources/contrastchecker/?fcolor=0000FF&bcolor=FFFFFF
 
 
-### show focus styling only on keyboard with css 
+### show focus styling only on keyboard 
+#### using css 
 https://stackoverflow.com/questions/31402576/enable-focus-only-on-keyboard-use-or-tab-press
+
+#### using js + css
+        // Adding css class to body element to giving more previlige to browser to know from where the events are triggering
+        $("body").on('keydown', function (e) {
+            $(this).removeClass("mouse-input").addClass("keyboard-input");
+        });
+
+        $("body").on('mousedown', function (e) {
+            $(this).removeClass("keyboard-input").addClass("mouse-input");
+        });
+
+        CSS
+        /* visible  */
+        .keyboard-input :focus {
+            outline: 1px solid #30a6ca
+        }
+
+
+
 
 
