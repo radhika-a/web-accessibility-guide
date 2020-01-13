@@ -71,28 +71,36 @@ https://stackoverflow.com/questions/31402576/enable-focus-only-on-keyboard-use-o
 
 
 #### Generic methods to handle keyboard tabbing
-// Common method to handle foucs while tabbing along with shift key
-function movefocusOnTab(elem, nextElem, checkShiftkey, prevElem ){
-	$(elem).on("keydown",function (event) {
-		if(checkShiftkey && event.keyCode == 9 && event.shiftKey){
-			event.preventDefault();
-			$(prevElem).focus();
-		}
-		else if(event.keyCode == 9 && !event.shiftKey){
-			event.preventDefault();
-			$(nextElem).focus();
-		}
-	});
-}
+	// Common method to handle foucs while tabbing along with shift key
+	function movefocusOnTab(elem, nextElem, checkShiftkey, prevElem ){
+		$(elem).on("keydown",function (event) {
+			if(checkShiftkey && event.keyCode == 9 && event.shiftKey){
+				event.preventDefault();
+				$(prevElem).focus();
+			}
+			else if(event.keyCode == 9 && !event.shiftKey){
+				event.preventDefault();
+				$(nextElem).focus();
+			}
+		});
+	}
 
-// Common method to handle foucs while shift key
-function movefocusOnShiftTab(elem, prevElem, timeDelay){
-	$(elem).on("keydown",function (event) {
-		if(event.keyCode == 9 && event.shiftKey){
-			event.preventDefault();
-			$(prevElem).focus();
-		}
-	});
-}
+	// call method using arguments
+	movefocusOnTab("selector", "next selector element", boolean, "previous selector element");
+
+
+	// Common method to handle foucs while shift key
+	function movefocusOnShiftTab(elem, prevElem){
+		$(elem).on("keydown",function (event) {
+			if(event.keyCode == 9 && event.shiftKey){
+				event.preventDefault();
+				$(prevElem).focus();
+			}
+		});
+	}
+	// call method using arguments
+	movefocusOnShiftTab("selector", "previous Elem selector")
+
+
 
 
