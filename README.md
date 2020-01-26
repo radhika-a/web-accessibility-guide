@@ -40,7 +40,7 @@ https://webaim.org/resources/contrastchecker/?fcolor=0000FF&bcolor=FFFFFF
 
 
 ### show focus styling only on keyboard 
-#### using css 
+#### Keyboard only focus using only  with CSS. 
 	<!-- HTML code -->
 	<a class="itemlink" href="#">
     		<span class="itemcontent" tabindex="-1">
@@ -60,6 +60,8 @@ https://webaim.org/resources/contrastchecker/?fcolor=0000FF&bcolor=FFFFFF
 		} 
 
 	</style>
+
+
 
 #### using js + css
         // Adding css class to body element to giving more previlige to browser to know from where the events are triggering
